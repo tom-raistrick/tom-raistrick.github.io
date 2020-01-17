@@ -40,7 +40,7 @@
         color: 'linear-gradient(135deg, #fca550, #fcd050)',
       },
       {
-        category: 'Watch',
+        category: 'Learn',
         name: 'Netflix',
         key: 'n',
         url: 'https://www.netflix.com/browse',
@@ -48,14 +48,14 @@
         color: 'linear-gradient(135deg, #e50914, #e53509)',
       },
       {
-        category: 'Watch',
+        category: 'Learn',
         name: 'Twitch',
         key: 't',
         url: 'https://www.twitch.tv/directory/following',
         color: 'linear-gradient(135deg, #6441a5, #7d41a5)',
       },
       {
-        category: 'Watch',
+        category: 'Learn',
         name: 'YouTube',
         key: 'y',
         url: 'https://youtube.com/feed/subscriptions',
@@ -63,7 +63,7 @@
         color: 'linear-gradient(135deg, #cd201f, #cd4c1f)',
       },
       {
-        category: 'Learn',
+        category: 'Relax',
         name: 'Academy',
         key: 'a',
         url: 'https://www.khanacademy.org',
@@ -71,7 +71,7 @@
         color: 'linear-gradient(135deg, #9cb443, #80b443)',
       },
       {
-        category: 'Learn',
+        category: 'Relax',
         name: 'Coursera',
         key: 'c',
         url: 'https://www.coursera.org',
@@ -79,7 +79,7 @@
         color: 'linear-gradient(135deg, #407ED7, #4058d7)',
       },
       {
-        category: 'Learn',
+        category: 'Relax',
         name: 'Egghead',
         key: 'e',
         url: 'https://egghead.io',
@@ -87,7 +87,7 @@
         color: 'linear-gradient(135deg, #171C23, #171923)',
       },
       {
-        category: 'Download',
+        category: 'Other',
         name: 'Bay',
         key: 'b',
         url: 'https://thepiratebay.org',
@@ -95,7 +95,7 @@
         color: 'linear-gradient(135deg, #d2b9a6, #d2c4a6)',
       },
       {
-        category: 'Download',
+        category: 'Other',
         name: 'YTS',
         key: 'Y',
         url: 'https://yts.am/browse-movies/0/1080p/all/8/latest',
@@ -103,7 +103,7 @@
         color: 'linear-gradient(135deg, #2f2f2f, #373737)',
       },
       {
-        category: 'Download',
+        category: 'Other',
         name: '7digital',
         key: '7',
         url: 'https://us.7digital.com',
@@ -116,7 +116,7 @@
      * Get suggestions as you type.
      */
     suggestions: true,
-    suggestionsLimit: 4,
+    suggestionsLimit: 6,
 
     /**
      * The order and limit for each suggestion influencer. An "influencer" is
@@ -127,8 +127,8 @@
      * - "History" suggestions come from your previously entered queries
      */
     influencers: [
-      { name: 'Default', limit: 4 },
-      { name: 'History', limit: 1 },
+      { name: 'Default', limit: 0 },
+      { name: 'History', limit: 0 },
       { name: 'DuckDuckGo', limit: 4 },
     ],
 
@@ -136,9 +136,7 @@
      * Default search suggestions for the specified queries.
      */
     defaultSuggestions: {
-      g: ['g/issues', 'g/pulls', 'gist.github.com'],
-      r: ['r/r/unixporn', 'r/r/startpages', 'r/r/webdev', 'r/r/technology'],
-      S: ['S/you/likes', 'S/discover/the-upload'],
+      
     },
 
     /**
@@ -150,12 +148,12 @@
     /**
      * Open triggered queries in a new tab.
      */
-    newTab: true,
+    newTab: false,
 
     /**
      * Use command colors when domains are matched and on the help page.
      */
-    colors: true,
+    colors: false,
 
     /**
      * The delimiter between a command key and your search query. For example,
