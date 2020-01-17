@@ -8,8 +8,8 @@ let CONFIG = {
   commands: [
     {
       name: 'Google',
-      url: 'https://google.com',
-      search: '/?q={}'
+      url: 'https://encrypted.google.com',
+      search: '/search?q={}'
     },
     {
       category: 'General',
