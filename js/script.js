@@ -175,7 +175,7 @@ let CONFIG = {
   /**
    * Dynamic overlay background colors when command domains are matched.
    */
-  colors: true,
+  colors: false,
 
   /**
    * Invert color theme
@@ -185,7 +185,7 @@ let CONFIG = {
   /**
    * Show keys instead of icons
    */
-  showKeys: false,
+  showKeys: true,
 
   /**
    * The delimiter between a command key and your search query. For example,
