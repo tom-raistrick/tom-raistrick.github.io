@@ -7,10 +7,13 @@ let CONFIG = {
    */
   commands: [
     {
-      name: 'DuckDuckGo',
-      url: 'https://duckduckgo.com',
-      search: '/?q={}'
+      name: 'Google',
+      key: '*',
+      url: 'https://encrypted.google.com',
+      search: '/search?q={}',
+      color: '#000',
     },
+    
     {
       category: 'General',
       name: 'Proton Mail',
