@@ -7,15 +7,13 @@ let CONFIG = {
    */
   commands: [
     {
-      name: 'Duckduckgo',
-      key: '*',
-      url: 'https://duckduckgo.com',
+      name: 'Google',
+      url: 'https://google.com',
       search: '/?q={}'
     },
     {
       category: 'General',
       name: 'Proton Mail',
-      key: 'm',
       url: 'https://mail.protonmail.com',
       search: '/#search/text={}',
       color: 'linear-gradient(135deg, #dd5145, #dd5145)',
@@ -25,7 +23,6 @@ let CONFIG = {
     {
       category: 'General',
       name: 'Drive',
-      key: 'd',
       url: 'https://drive.google.com',
       search: '/drive/search?q={}',
       color: 'linear-gradient(135deg, #FFD04B, #1EA362, #4688F3)',
@@ -35,7 +32,6 @@ let CONFIG = {
     {
       category: 'General',
       name: 'LinkedIn',
-      key: 'l',
       url: 'https://linkedin.com',
       search: '/search/results/all/?keywords={}',
       color: 'linear-gradient(135deg, #006CA4, #0077B5)',
@@ -45,7 +41,6 @@ let CONFIG = {
     {
       category: 'Tech',
       name: 'GitHub',
-      key: 'g',
       url: 'https://github.com',
       search: '/search?q={}',
       color: 'linear-gradient(135deg, #2b2b2b, #3b3b3b)',
@@ -55,7 +50,6 @@ let CONFIG = {
     {
       category: 'Tech',
       name: 'Gitlab',
-      key: 's',
       url: 'https://gitlab.com',
       search: '/search?q={}',
       color: 'linear-gradient(135deg, #53341C, #F48024)',
@@ -65,7 +59,6 @@ let CONFIG = {
     {
       category: 'Tech',
       name: 'HackerNews',
-      key: 'h',
       url: 'https://news.ycombinator.com/',
       search: '/search?stories[query]={}',
       color: 'linear-gradient(135deg, #FF6600, #DC5901)',
@@ -75,7 +68,6 @@ let CONFIG = {
     {
       category: 'Relax',
       name: 'YouTube',
-      key: 'y',
       url: 'https://youtube.com',
       search: '/results?search_query={}',
       color: 'linear-gradient(135deg, #cd201f, #cd4c1f)',
@@ -85,7 +77,6 @@ let CONFIG = {
     {
       category: 'Relax',
       name: 'Netflix',
-      key: 'n',
       url: 'https://www.netflix.com',
       color: 'linear-gradient(135deg, #E50914, #CB020C)',
       icon: 'netflix',
@@ -94,7 +85,6 @@ let CONFIG = {
     {
       category: 'Relax',
       name: 'Twitch',
-      key: 'tw',
       url: 'https://www.twitch.tv',
       search: '/directory/game/{}',
       color: 'linear-gradient(135deg, #6441a5, #4b367c)',
@@ -104,7 +94,6 @@ let CONFIG = {
     {
       category: 'Other',
       name: 'Reddit',
-      key: 'r',
       url: 'https://reddit.com',
       search: '/search?q={}',
       color: 'linear-gradient(135deg, #FF8456, #FF4500)',
@@ -114,7 +103,6 @@ let CONFIG = {
     {
       category: 'Other',
       name: 'Twitter',
-      key: 't',
       url: 'https://twitter.com',
       search: '/search?q={}&src=typed_query',
       color: 'linear-gradient(135deg, #1DA1F2, #19608F)',
@@ -124,7 +112,6 @@ let CONFIG = {
     {
       category: 'Other',
       name: 'IMDb',
-      key: 'i',
       url: 'https://imdb.com',
       search: '/find?ref_=nv_sr_fn&q={}',
       color: 'linear-gradient(135deg, #7A5F00, #E8B708)',
@@ -185,7 +172,7 @@ let CONFIG = {
   /**
    * Show keys instead of icons
    */
-  showKeys: true,
+  showKeys: false,
 
   /**
    * The delimiter between a command key and your search query. For example,
