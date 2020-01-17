@@ -7,8 +7,8 @@ let CONFIG = {
    */
   commands: [
     {
-      name: 'Google',
-      url: 'https://google.com',
+      name: 'DuckDuckGo',
+      url: 'https://duckduckgo.com',
       search: '/?q={}'
     },
     {
