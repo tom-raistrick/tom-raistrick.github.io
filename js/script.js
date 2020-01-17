@@ -4,7 +4,6 @@ let CONFIG = {
    * Icons must be added to "icons" folder and their values/names must be updated.
    * If none of the specified keys are matched, the '*' key is used.
    * Commands without a category don't show up in the help menu.
-   * Update line 11 and 13 if you prefer using Google.
    */
   commands: [
     {
@@ -15,9 +14,9 @@ let CONFIG = {
     },
     {
       category: 'General',
-      name: 'Mail',
+      name: 'Proton Mail',
       key: 'm',
-      url: 'https://gmail.com',
+      url: 'https://mail.protonmail.com',
       search: '/#search/text={}',
       color: 'linear-gradient(135deg, #dd5145, #dd5145)',
       icon: 'mail',
@@ -55,9 +54,9 @@ let CONFIG = {
     },
     {
       category: 'Tech',
-      name: 'StackOverflow',
+      name: 'Gitlab',
       key: 's',
-      url: 'https://stackoverflow.com',
+      url: 'https://gitlab.com',
       search: '/search?q={}',
       color: 'linear-gradient(135deg, #53341C, #F48024)',
       icon: 'stackoverflow',
@@ -74,7 +73,7 @@ let CONFIG = {
       quickLaunch: true,
     },
     {
-      category: 'Fun',
+      category: 'Relax',
       name: 'YouTube',
       key: 'y',
       url: 'https://youtube.com',
@@ -84,7 +83,7 @@ let CONFIG = {
       quickLaunch: false,
     },
     {
-      category: 'Fun',
+      category: 'Relax',
       name: 'Netflix',
       key: 'n',
       url: 'https://www.netflix.com',
@@ -93,7 +92,7 @@ let CONFIG = {
       quickLaunch: false,
     },
     {
-      category: 'Fun',
+      category: 'Relax',
       name: 'Twitch',
       key: 'tw',
       url: 'https://www.twitch.tv',
