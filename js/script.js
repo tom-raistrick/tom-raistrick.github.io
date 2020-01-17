@@ -10,8 +10,9 @@ let CONFIG = {
     {
       name: 'Google',
       key: '*',
-      url: 'https://google.com',
-      search: '/?q={}'
+      url: 'https://encrypted.google.com',
+      search: '/search?q={}',
+      color: '#000',
     },
     {
       category: 'General',
