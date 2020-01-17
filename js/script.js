@@ -10,7 +10,7 @@ let CONFIG = {
     {
       name: 'Google',
       key: '*',
-      url: 'https://encrypted.google.com',
+      url: 'https://google.com',
       search: '/?q={}'
     },
     {
