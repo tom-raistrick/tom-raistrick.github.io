@@ -4,20 +4,20 @@ let CONFIG = {
    * Icons must be added to "icons" folder and their values/names must be updated.
    * If none of the specified keys are matched, the '*' key is used.
    * Commands without a category don't show up in the help menu.
+   * Update line 11 and 13 if you prefer using Google.
    */
   commands: [
     {
-      name: 'Google',
+      name: 'Duckduckgo',
       key: '*',
-      url: 'https://encrypted.google.com',
-      search: '/search?q={}',
-      color: '#000',
+      url: 'https://duckduckgo.com',
+      search: '/?q={}'
     },
-    
     {
       category: 'General',
-      name: 'Proton Mail',
-      url: 'https://mail.protonmail.com',
+      name: 'Mail',
+      key: 'm',
+      url: 'https://gmail.com',
       search: '/#search/text={}',
       color: 'linear-gradient(135deg, #dd5145, #dd5145)',
       icon: 'mail',
@@ -26,6 +26,7 @@ let CONFIG = {
     {
       category: 'General',
       name: 'Drive',
+      key: 'd',
       url: 'https://drive.google.com',
       search: '/drive/search?q={}',
       color: 'linear-gradient(135deg, #FFD04B, #1EA362, #4688F3)',
@@ -35,6 +36,7 @@ let CONFIG = {
     {
       category: 'General',
       name: 'LinkedIn',
+      key: 'l',
       url: 'https://linkedin.com',
       search: '/search/results/all/?keywords={}',
       color: 'linear-gradient(135deg, #006CA4, #0077B5)',
@@ -44,6 +46,7 @@ let CONFIG = {
     {
       category: 'Tech',
       name: 'GitHub',
+      key: 'g',
       url: 'https://github.com',
       search: '/search?q={}',
       color: 'linear-gradient(135deg, #2b2b2b, #3b3b3b)',
@@ -52,8 +55,9 @@ let CONFIG = {
     },
     {
       category: 'Tech',
-      name: 'Gitlab',
-      url: 'https://gitlab.com',
+      name: 'StackOverflow',
+      key: 's',
+      url: 'https://stackoverflow.com',
       search: '/search?q={}',
       color: 'linear-gradient(135deg, #53341C, #F48024)',
       icon: 'stackoverflow',
@@ -62,6 +66,7 @@ let CONFIG = {
     {
       category: 'Tech',
       name: 'HackerNews',
+      key: 'h',
       url: 'https://news.ycombinator.com/',
       search: '/search?stories[query]={}',
       color: 'linear-gradient(135deg, #FF6600, #DC5901)',
@@ -69,8 +74,9 @@ let CONFIG = {
       quickLaunch: true,
     },
     {
-      category: 'Relax',
+      category: 'Fun',
       name: 'YouTube',
+      key: 'y',
       url: 'https://youtube.com',
       search: '/results?search_query={}',
       color: 'linear-gradient(135deg, #cd201f, #cd4c1f)',
@@ -78,16 +84,18 @@ let CONFIG = {
       quickLaunch: false,
     },
     {
-      category: 'Relax',
+      category: 'Fun',
       name: 'Netflix',
+      key: 'n',
       url: 'https://www.netflix.com',
       color: 'linear-gradient(135deg, #E50914, #CB020C)',
       icon: 'netflix',
       quickLaunch: false,
     },
     {
-      category: 'Relax',
+      category: 'Fun',
       name: 'Twitch',
+      key: 'tw',
       url: 'https://www.twitch.tv',
       search: '/directory/game/{}',
       color: 'linear-gradient(135deg, #6441a5, #4b367c)',
@@ -97,6 +105,7 @@ let CONFIG = {
     {
       category: 'Other',
       name: 'Reddit',
+      key: 'r',
       url: 'https://reddit.com',
       search: '/search?q={}',
       color: 'linear-gradient(135deg, #FF8456, #FF4500)',
@@ -106,6 +115,7 @@ let CONFIG = {
     {
       category: 'Other',
       name: 'Twitter',
+      key: 't',
       url: 'https://twitter.com',
       search: '/search?q={}&src=typed_query',
       color: 'linear-gradient(135deg, #1DA1F2, #19608F)',
@@ -115,6 +125,7 @@ let CONFIG = {
     {
       category: 'Other',
       name: 'IMDb',
+      key: 'i',
       url: 'https://imdb.com',
       search: '/find?ref_=nv_sr_fn&q={}',
       color: 'linear-gradient(135deg, #7A5F00, #E8B708)',
@@ -165,7 +176,7 @@ let CONFIG = {
   /**
    * Dynamic overlay background colors when command domains are matched.
    */
-  colors: false,
+  colors: true,
 
   /**
    * Invert color theme
@@ -269,6 +280,42 @@ const $ = {
 
   pad: v => ('0' + v.toString()).slice(-2),
 };
+
+class Clock {
+  constructor(options) {
+    this._el = $.el('#clock');
+    this._delimiter = options.delimiter;
+    this._twentyFourHourClock = options.twentyFourHourClock;
+    this._setTime = this._setTime.bind(this);
+    this._el.addEventListener('click', options.toggleHelp);
+    this._start();
+  }
+
+  _setTime() {
+    const date = new Date();
+    let hours = $.pad(date.getHours());
+    let amPm = '';
+
+    if (!this._twentyFourHourClock) {
+      hours = date.getHours();
+      if (hours > 12) hours -= 12;
+      else if (hours === 0) hours = 12;
+
+      amPm =
+        `&nbsp;<span class="am-pm">` +
+        `${date.getHours() >= 12 ? 'PM' : 'AM'}</span>`;
+    }
+
+    const minutes = $.pad(date.getMinutes());
+    this._el.innerHTML = `${hours}${this._delimiter}${minutes}${amPm}`;
+    this._el.setAttribute('datetime', date.toTimeString());
+  }
+
+  _start() {
+    this._setTime();
+    setInterval(this._setTime, 1000);
+  }
+}
 
 class Help {
   constructor(options) {
@@ -959,4 +1006,10 @@ const form = new Form({
   quickLaunch: help.launch,
   invertedColors: CONFIG.invertedColors,
   showKeys: CONFIG.showKeys
+});
+
+new Clock({
+  delimiter: CONFIG.clockDelimiter,
+  toggleHelp: help.toggle,
+  twentyFourHourClock: CONFIG.twentyFourHourClock,
 });
