@@ -41,9 +41,10 @@ html {
   border: 3px solid #BDC3C7;
   padding: 5px;
   height: 20px;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 5px 5px 5px;
   outline: none;
   color: #BDC3C7;
+  background-color: #374140;
 }
 
 .searchTerm:focus{
