@@ -67,7 +67,7 @@ html {
 .wrap{
   width: 80%;
   position: absolute;
-  top: 25%;
+  top: 0%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -83,7 +83,7 @@ main {
 }
 
 .links {
-	padding: 5px 15px;
+	padding: 5px 8px 0px 8px;
 	width: auto;
 	display: block;
 	text-align: center;
