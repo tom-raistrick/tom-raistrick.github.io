@@ -43,11 +43,11 @@ html {
   height: 20px;
   border-radius: 5px 0px 0px 5px;
   outline: none;
-  color: #9DBFAF;
+  color: #BDC3C7;
 }
 
 .searchTerm:focus{
-  color: #00B4CC;
+  color: #BDC3C7;
 }
 
 .searchButton {
