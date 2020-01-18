@@ -61,6 +61,7 @@ html {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  visibility: hidden;
 }
 
 /*Resize the wrap to see the search bar change!*/
