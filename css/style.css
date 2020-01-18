@@ -19,8 +19,8 @@
 
 html {
 	background: var(--bgdark);
-	background-position: top -24px left 0;
-	margin-top: -26px;
+	background-position: top 0 left 0;
+	margin-top: 0px;
 }
 
 html {
@@ -67,7 +67,7 @@ html {
 .wrap{
   width: 80%;
   position: absolute;
-  top: 0%;
+  top: -50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
